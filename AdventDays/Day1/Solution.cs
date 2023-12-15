@@ -43,29 +43,25 @@ namespace AdventOfCode2023.AdventDays.Day1
         private bool IsDigit(char c)
             => c >= '0' && c <= '9';
 
-        private (int? Digit, int Index) FirstNumericalDigit(string line)
+        private int? FirstNumericalDigit(string line)
         { 
             char digitChar = line.FirstOrDefault(c => IsDigit(c), '?');
-            int? digit = (digitChar == '?') ? null : digitChar - '0';
-            int index = (digit == null) ? - 1 : line.IndexOf(digitChar);
-            return (digit, index);
+            return (digitChar == '?') ? null : digitChar - '0';
         }
 
-        private (int? Digit, int Index) LastNumericalDigit(string line)
+        private int? LastNumericalDigit(string line)
         {
             char digitChar = line.LastOrDefault(c => IsDigit(c), '?');
-            int? digit = (digitChar == '?') ? null : digitChar - '0';
-            int index = (digit == null) ? -1 : line.LastIndexOf(digitChar);
-            return (digit, index);
+            return (digitChar == '?') ? null : digitChar - '0';
         }
 
-        private (int? Digit, int Index) FirstAlphanumericalDigit(string line)
+        private int? FirstAlphanumericalDigit(string line)
         {
             int firstDigitIndex = line.Length - 1;
-            (int? firstDigit, var firstIndex) = FirstNumericalDigit(line);
+            int? firstDigit = FirstNumericalDigit(line);
 
             if (firstDigit != null)
-                firstDigitIndex = firstIndex;
+                firstDigitIndex = line.IndexOf((char)(firstDigit + '0'));
 
             string lineToSearch = line.Substring(0, firstDigitIndex);
 
@@ -79,16 +75,16 @@ namespace AdventOfCode2023.AdventDays.Day1
                 }
             }
 
-            return (firstDigit, firstDigitIndex);
+            return firstDigit;
         }
 
-        private (int? Digit, int Index) LastAlphanumericalDigit(string line)
+        private int? LastAlphanumericalDigit(string line)
         {
             int lastDigitIndex = 0;
-            (int? lastDigit, var lastIndex)  = LastNumericalDigit(line);
+            int? lastDigit  = LastNumericalDigit(line);
 
             if (lastDigit != null)
-                lastDigitIndex = lastIndex;
+                lastDigitIndex = line.LastIndexOf((char)(lastDigit + '0'));
 
             string lineToSearch = line.Substring(lastDigitIndex);
             int indexStart = lastDigitIndex;
@@ -103,7 +99,7 @@ namespace AdventOfCode2023.AdventDays.Day1
                 }
             }
 
-            return (lastDigit, lastDigitIndex);
+            return lastDigit;
         }
         #endregion
 
@@ -114,8 +110,8 @@ namespace AdventOfCode2023.AdventDays.Day1
 
             foreach (string line in PuzzleLines)
             {
-                (int? firstDigit, int firstIndex) = FirstNumericalDigit(line);
-                (int? lastDigit, int lastIndex) = LastNumericalDigit(line);
+                int? firstDigit = FirstNumericalDigit(line);
+                int? lastDigit = LastNumericalDigit(line);
 
                 if (firstDigit == null || lastDigit == null)
                     continue;
@@ -132,8 +128,8 @@ namespace AdventOfCode2023.AdventDays.Day1
 
             foreach (string line in PuzzleLines)
             {
-                (int? firstDigit, int firstIndex) = FirstAlphanumericalDigit(line);
-                (int? lastDigit, int lastIndex) = LastAlphanumericalDigit(line);
+                int? firstDigit = FirstAlphanumericalDigit(line);
+                int? lastDigit = LastAlphanumericalDigit(line);
 
                 if (firstDigit == null || lastDigit == null)
                     continue;
