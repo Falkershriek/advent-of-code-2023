@@ -16,7 +16,7 @@ namespace AdventOfCode2023.AdventDays.Day4
         #region Constructors
         public Solution()
         {
-            string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day4\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day4\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
@@ -98,12 +98,12 @@ namespace AdventOfCode2023.AdventDays.Day4
         {
             List<Card> cards = GetCards(PuzzleLines);
 
-            long sum = 0;
+            long result = 0;
 
             foreach (Card card in cards)
-                sum += card.Score;
+                result += card.Score;
 
-            return sum;
+            return result;
         }
 
         public override long Part2()
@@ -111,12 +111,12 @@ namespace AdventOfCode2023.AdventDays.Day4
             List<(Card Card, int Count)> cardStack = GetCardStack(GetCards(PuzzleLines));
             cardStack = GetUpdatedCardStack(cardStack);
 
-            long sum = 0;
+            long result = 0;
 
             foreach (var cardPile in cardStack)
-                sum += cardPile.Count;
+                result += cardPile.Count;
 
-            return sum;
+            return result;
         }
         #endregion
     }
