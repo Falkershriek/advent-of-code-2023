@@ -13,7 +13,7 @@ namespace AdventOfCode2023.AdventDays.Day6
         #region Constructors
         public Solution()
         {
-            string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day6\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day6\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
