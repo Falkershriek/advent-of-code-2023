@@ -36,7 +36,7 @@ namespace AdventOfCode2023.AdventDays.Day3
             {
                 for (int x = 0; x < puzzlePlane.GetLength(0); x++)
                 {
-                    puzzlePlane[x, y] = puzzleLines[y][x]; // swap x and y?
+                    puzzlePlane[x, y] = puzzleLines[y][x];
                 }
             }
 
