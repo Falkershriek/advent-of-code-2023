@@ -13,7 +13,7 @@ namespace AdventOfCode2023.AdventDays.Day3
         #region Constructors
         public Solution()
         {
-            string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day3\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day3\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
@@ -135,13 +135,13 @@ namespace AdventOfCode2023.AdventDays.Day3
             char[,] puzzlePlane = GetPuzzlePlane(PuzzleLines);
             List<PartNumber> partNumbers = GetPartNumbers(puzzlePlane);
 
-            long sum = 0;
+            long result = 0;
 
             foreach (PartNumber partNumber in partNumbers)
                 if (IsAdjacentToSymbol(partNumber, puzzlePlane))
-                    sum += partNumber.Value;
+                    result += partNumber.Value;
 
-            return sum;
+            return result;
         }
 
         public override long Part2()
@@ -150,16 +150,16 @@ namespace AdventOfCode2023.AdventDays.Day3
             List<PartNumber> adjacentPartNumbers = GetPartNumbers(puzzlePlane).FindAll(x => IsAdjacentToSymbol(x, puzzlePlane));
             List<AsteriskPart> AsteriskParts = GetAsteriskParts(puzzlePlane);
 
-            long sum = 0;
+            long result = 0;
 
             foreach (AsteriskPart asteriskPart in AsteriskParts)
             {
                 int gearRatio = GetGearRatio(asteriskPart, adjacentPartNumbers);
                 if (gearRatio > 0)
-                    sum += gearRatio;
+                    result += gearRatio;
             }
 
-            return sum;
+            return result;
         }
         #endregion
     }
