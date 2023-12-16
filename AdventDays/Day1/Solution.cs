@@ -14,7 +14,7 @@ namespace AdventOfCode2023.AdventDays.Day1
         #region Constructors
         public Solution()
         {
-            string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day1\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day1\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
@@ -106,7 +106,7 @@ namespace AdventOfCode2023.AdventDays.Day1
         #region Parts
         public override long Part1()
         {
-            long sum = 0;
+            long result = 0;
 
             foreach (string line in PuzzleLines)
             {
@@ -116,15 +116,15 @@ namespace AdventOfCode2023.AdventDays.Day1
                 if (firstDigit == null || lastDigit == null)
                     continue;
 
-                sum += (int)firstDigit * 10 + (int)lastDigit;
+                result += (int)firstDigit * 10 + (int)lastDigit;
             }
 
-            return sum;
+            return result;
         }
 
         public override long Part2()
         {
-            long sum = 0;
+            long result = 0;
 
             foreach (string line in PuzzleLines)
             {
@@ -134,10 +134,10 @@ namespace AdventOfCode2023.AdventDays.Day1
                 if (firstDigit == null || lastDigit == null)
                     continue;
 
-                sum += (int)firstDigit * 10 + (int)lastDigit;
+                result += (int)firstDigit * 10 + (int)lastDigit;
             }
 
-            return sum;
+            return result;
         }
         #endregion
     }
