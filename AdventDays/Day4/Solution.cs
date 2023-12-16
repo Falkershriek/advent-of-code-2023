@@ -110,7 +110,6 @@ namespace AdventOfCode2023.AdventDays.Day4
         {
             List<(Card Card, int Count)> cardStack = GetCardStack(GetCards(PuzzleLines));
             cardStack = GetUpdatedCardStack(cardStack);
-            //List<(Card Card, int Count)> updatedCardStack = GetUpdatedCardStack(cardStack);
 
             long sum = 0;
 
