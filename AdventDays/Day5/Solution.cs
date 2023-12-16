@@ -13,7 +13,7 @@ namespace AdventOfCode2023.AdventDays.Day5
         #region Constructors
         public Solution()
         {
-            string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day5\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day5\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
@@ -389,7 +389,9 @@ namespace AdventOfCode2023.AdventDays.Day5
                 lowestDestinationFound = (currentLocation < lowestDestinationFound) ? currentLocation : lowestDestinationFound;
             }
 
-            return lowestDestinationFound;
+            long result = lowestDestinationFound;
+
+            return result;
         }
 
         public override long Part2()
@@ -420,7 +422,9 @@ namespace AdventOfCode2023.AdventDays.Day5
             for (int i = 1; i < completeMaps.Count; i++)
                 finalMap = MergedMap(finalMap, completeMaps[i]);
 
-            return finalMap.Min(x => MinDestination(x));
+            long result = finalMap.Min(x => MinDestination(x));
+
+            return result;
         }
         #endregion
     }
