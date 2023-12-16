@@ -14,7 +14,7 @@ namespace AdventOfCode2023.AdventDays.Reusables
         #region Constructors
         public SolutionBase()
         {
-            //string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day6\TestPuzzleInput.txt";
+            //string filePath = @".\..\..\..\AdventDays\DayX\Inputs\PuzzleInput.txt";
             //PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
