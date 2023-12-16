@@ -12,7 +12,7 @@ namespace AdventOfCode2023.AdventDays.Day2
         #region Constructors
         public Solution()
         {
-            string filePath = @"D:\Home\Projects\Software\AdventOfCode2023\AdventDays\Day2\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day2\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
@@ -91,7 +91,7 @@ namespace AdventOfCode2023.AdventDays.Day2
         {
             List<Game> games = GetGames(PuzzleLines);
 
-            long sum = 0;
+            long result = 0;
 
             int RedCubes = 12;
             int GreenCubes = 13;
@@ -100,22 +100,22 @@ namespace AdventOfCode2023.AdventDays.Day2
             foreach (Game game in games)
             {
                 if (GameIsPossible(game, RedCubes, GreenCubes, BlueCubes))
-                    sum += game.Id;
+                    result += game.Id;
             }
 
-            return sum;
+            return result;
         }
 
         public override long Part2()
         {
             List<Game> games = GetGames(PuzzleLines);
 
-            long sum = 0;
+            long result = 0;
 
             foreach (Game game in games)
-                sum += PowerOf(game);
+                result += PowerOf(game);
 
-            return sum;
+            return result;
         }
         #endregion
     }
