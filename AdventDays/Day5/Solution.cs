@@ -161,12 +161,7 @@ namespace AdventOfCode2023.AdventDays.Day5
             else
                 spanValue = GetSpan(destinationValue, MaxDestination(sourceEntry));
 
-            return new MapEntry
-            (
-                destinationValue,
-                sourceValue,
-                spanValue
-            );
+            return new MapEntry(destinationValue, sourceValue, spanValue);
         }
 
         /// <summary>
@@ -197,12 +192,7 @@ namespace AdventOfCode2023.AdventDays.Day5
             else
                 spanValue = GetSpan(sourceValue, MaxDestination(sourceEntry));
 
-            return new MapEntry
-            (
-                destinationValue,
-                sourceValue,
-                spanValue
-            );
+            return new MapEntry(destinationValue, sourceValue, spanValue);
         }
 
         /// <summary>
@@ -289,6 +279,7 @@ namespace AdventOfCode2023.AdventDays.Day5
         {
             long minSource = map.Min(x => x.Source);
             MapEntry? foundEntry = map.Find(x => x.Source == minSource);
+
             if (foundEntry == null) throw new Exception("ble");
 
             return foundEntry;
@@ -301,6 +292,7 @@ namespace AdventOfCode2023.AdventDays.Day5
         {
             long maxSource = map.Max(x => x.Source);
             MapEntry? foundEntry = map.Find(x => x.Source == maxSource);
+
             if (foundEntry == null) throw new Exception("ble");
 
             return foundEntry;
@@ -314,7 +306,6 @@ namespace AdventOfCode2023.AdventDays.Day5
             List<MapEntry> completeMap = new List<MapEntry>();
             long lastMappedSource = -1;
 
-            //foreach (MapEntry remainingEntries in map)
             while (lastMappedSource != long.MaxValue)
             {
                 List<MapEntry> remainingEntries = map.FindAll(x => x.Source > lastMappedSource);
@@ -348,6 +339,7 @@ namespace AdventOfCode2023.AdventDays.Day5
                     );
                     completeMap.Add(mapEntry);
                 }
+
                 lastMappedSource = MaxSource(GetEntryWithMaxSource(completeMap));
             }
 
