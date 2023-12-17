@@ -7,14 +7,14 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2023.AdventDays.Day1
+namespace AdventOfCode2023.AdventDays.Day01
 {
     public class Solution : SolutionBase
     {
         #region Constructors
         public Solution()
         {
-            string filePath = @".\..\..\..\AdventDays\Day1\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day01\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
