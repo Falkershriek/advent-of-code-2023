@@ -47,19 +47,19 @@ namespace AdventOfCode2023.AdventDays.Day9
 
         private long GetNextValue(List<long> values)
         {
-            List<List<long>> listsOfValues = GetPredictionsLists(values);
+            List<List<long>> predictionsLists = GetPredictionsLists(values);
 
-            long nextValue = listsOfValues.Sum(x => x.Last());
+            long nextValue = predictionsLists.Sum(x => x.Last());
 
             return nextValue;
         }
 
         private long GetPreviousValue(List<long> values)
         {
-            List<List<long>> listsOfValues = GetPredictionsLists(values);
-            listsOfValues.Reverse();
+            List<List<long>> predictionsLists = GetPredictionsLists(values);
+            predictionsLists.Reverse();
 
-            long previousValue = listsOfValues.Select(x => x.First())
+            long previousValue = predictionsLists.Select(x => x.First())
                                               .Aggregate((a, b) => b - a);
             return previousValue;
         }
