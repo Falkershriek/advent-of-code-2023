@@ -66,7 +66,6 @@ namespace AdventOfCode2023.AdventDays.Day8
             List<char> instructions = GetInstructions(PuzzleLines);
 
             string currentNode = "AAA";
-
             long steps = 0;
 
             for (int i = 0; ; i = (i + 1) % instructions.Count)
@@ -78,9 +77,7 @@ namespace AdventOfCode2023.AdventDays.Day8
                     break;
             }
 
-            long result = steps;
-
-            return result;
+            return steps;
         }
 
         public override long Part2()
@@ -112,9 +109,7 @@ namespace AdventOfCode2023.AdventDays.Day8
 
             long lcm = loopSteps.Aggregate((a, b) => LCM(a, b));
 
-            long result = lcm;
-
-            return result;
+            return lcm;
         }
         #endregion
     }
