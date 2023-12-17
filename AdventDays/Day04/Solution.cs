@@ -9,14 +9,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static System.Formats.Asn1.AsnWriter;
 
-namespace AdventOfCode2023.AdventDays.Day4
+namespace AdventOfCode2023.AdventDays.Day04
 {
     public class Solution : SolutionBase
     {
         #region Constructors
         public Solution()
         {
-            string filePath = @".\..\..\..\AdventDays\Day4\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day04\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
