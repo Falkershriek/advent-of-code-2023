@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace AdventOfCode2023.AdventDays.Day8
+namespace AdventOfCode2023.AdventDays.Day08
 {
     public class Solution : SolutionBase
     {
@@ -17,7 +17,7 @@ namespace AdventOfCode2023.AdventDays.Day8
         #region Constructors
         public Solution()
         {
-            string filePath = @".\..\..\..\AdventDays\Day8\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day08\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
             Node = new Dictionary<string, (string Left, string Right)>();
 
