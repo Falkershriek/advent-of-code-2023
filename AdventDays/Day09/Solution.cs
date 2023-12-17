@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2023.AdventDays.Day9
+namespace AdventOfCode2023.AdventDays.Day09
 {
     public class Solution : SolutionBase
     {
         #region Constructors
         public Solution()
         {
-            string filePath = @".\..\..\..\AdventDays\Day9\Inputs\PuzzleInput.txt";
+            string filePath = @".\..\..\..\AdventDays\Day09\Inputs\PuzzleInput.txt";
             PuzzleLines = File.ReadLines(filePath).ToList();
         }
         #endregion
